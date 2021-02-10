@@ -3,23 +3,40 @@ import axios from "axios";
 import FlightFormC from "./FlightFormC";
 import FlightListC from "./FlightListC";
 
+const SERVER_URL = "http://localhost:3000/flights.json";
+//later change to: const SERVER_URL = "http://we-are-the-best.heroku.com/"
+//for deployment
+
 class FlightC extends Component {
   constructor() {
     super();
     this.state = {
-      flights: [
-        { id: 1, number: 'Q654', date: '12/12/22', origin: 'Sydney', destination: 'Melbourne'},
-        { id: 2, number: 'Q734', date: '12/07/22', origin: 'Sydney', destination: 'Brisbane'},
-        { id: 3, number: 'Q275', date: '09/12/22', origin: 'Sydney', destination: 'Perth'},
-      ]
+      flights: []
     }
-  }
+
+    this.saveFlight = this.saveFlight.bind(this);
+
+  const fetchFlights = () => {
+    axios.get(SERVER_URL).then((response) => {
+      this.setState({flights: response.data});
+      setTimeout(fetchFlights, 4000)
+    });
+  };
+
+  fetchFlights();
+}
+
+saveFlight(obj) {
+  axios.post(SERVER_URL, obj).then((response) => {
+    this.setState({ flights: [...this.state.flights, response.data] });
+  });
+}
 
   render() {
     return (
       <div>
-      Flight Create Coming Soon
-      <FlightFormC />
+      Create New Flight
+      <FlightFormC onSubmit={ this.saveFlight }/>
       <FlightListC flights={ this.state.flights } />
       </div>
     );

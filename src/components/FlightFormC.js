@@ -19,7 +19,8 @@ class FlightFormC extends Component {
 
   _handleSubmit(event) {
     event.preventDefault();
-    console.log('it works kind of');
+    this.props.onSubmit(this.state);
+    this.setState({ number: "", date: "", origin: "", destination: "" })
   }
 
 
