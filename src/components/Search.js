@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import AirplaneForm from "./AirplaneForm";
 
 const SERVER_URL = 'http://localhost:3000/flights.json';
 
@@ -69,7 +69,7 @@ class SearchForm extends Component {
       <div>
       <h1> Flight Search Results</h1>
           { props.flights.map( s =>
-             <p key= {s.name}>{s.date}, {s.number}, {s.origin} to {s.destination}, Plane1 </p>)}
+             <p key= {s.id}>{s.date}, {s.number}, {s.origin} to {s.destination}, {s.name}</p>)}
       </div>
     );
   }
@@ -103,7 +103,7 @@ _handleClick(e) {
     window.location.href = `${ghUrl}`;
   }
 
-//filter the flight which match with choosen origin and destination 
+//filter the flight which match with choosen origin and destination
   searchFlights(q1, q2) {
          axios.get(SERVER_URL).then(function (results){
            let array_flights = [];
@@ -117,7 +117,7 @@ _handleClick(e) {
            <div>
            <h2> Flight Search Results</h2>
                { this.state.flights.map( s =>
-                 <p key= {s.name}>{s.date}, {s.number}, {s.origin} to {s.destination}, Plane1 </p>)}
+                 <p key= {s.id}>{s.date}, {s.number}, {s.origin} to {s.destination}, {s.name}</p>)}
            </div>
          );
        }

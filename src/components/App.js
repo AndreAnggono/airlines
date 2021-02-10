@@ -1,13 +1,13 @@
+import Airplane from "./Airplane";
  import Search from './Search';
-// import Flights from './Flights';
 
 function App() {
-  return (
-    <div className="App">
-       <Search />
-    
-    </div>
-  );
+	return (
+		<div className="App">
+			<Airplane />
+      <Search />
+		</div>
+	);
 }
 
 export default App;
