@@ -46,7 +46,7 @@ class SearchForm extends Component {
         <form onSubmit={ this._handleSubmit } class="flights">
        <p>Name</p>
        <input type="text" required onInput={ this._handleName }/>
-       
+
        <p>Origin</p>
        <select value={this.state.value} onChange={this._handleChange1}>
          <option value=""></option>
@@ -79,7 +79,9 @@ class SearchForm extends Component {
       <div>
       <h1> Flight Search Results</h1>
           { props.flights.map( f =>
-             <p key= {f.id}>{f.date}, {f.number}, {f.origin} to {f.destination}, {f.name}<Link to="/Reservations">Book Flight</Link></p></p>)}
+             <p key= {f.id}>{f.date}, {f.number}, {f.origin} to {f.destination}, {f.name}
+             <Link to="/Reservation">Book Flight</Link>
+             </p>)}
       </div>
     );
   }
@@ -127,8 +129,9 @@ _handleClick(e) {
          return (
             <div>
             { this.state.flights.map( f =>
-                 <p key= {f.id}>{f.date}, {f.number}, {f.origin} to {f.destination}, {f.name}</p>)}
-                  <Link to="/Reservations">Book Flight</Link></p>
+                 <p key= {f.id}>{f.date}, {f.number}, {f.origin} to {f.destination}, {f.name}
+                  <Link to="/Reservation">Book Flight</Link> </p>
+                )}
            </div>
           );
         }
