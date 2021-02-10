@@ -11,8 +11,8 @@ export class Airplane extends Component {
 
 		this.state = {
 			planes: [
-				{ name: "NH747", rows: 24, cols: 4 },
-				{ name: "QA747", rows: 20, cols: 5 },
+				{ id: 4, name: "NH747", rows: 24, cols: 4 },
+				{ id: 5, name: "QA747", rows: 20, cols: 5 },
 			],
 		};
 
