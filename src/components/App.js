@@ -1,10 +1,12 @@
 import Airplane from "./Airplane";
-import FlightC from "./FlightC";
+import Search from './Search';
+import FlightC from './FlightC';
 
 function App() {
 	return (
 		<div className="App">
 			<Airplane />
+      <Search />
 			<FlightC />
 		</div>
 	);
