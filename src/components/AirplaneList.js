@@ -4,7 +4,7 @@ function AirplaneList(props) {
 	return (
 		<div>
 			{props.planes.map((p) => (
-				<div key={ p.id }>
+				<div key={p.id}>
 					<h2>{p.name}</h2>
 					<table>
 						<tbody>
@@ -28,7 +28,6 @@ function AirplaneList(props) {
 function printLayout(obj) {
 	const { row, column } = obj;
 	let letter = 65; // ASCII for A
-
 
 	function printLayout(obj) {
 		const { row, column } = obj;
@@ -57,5 +56,6 @@ function printLayout(obj) {
 			</div>
 		);
 	}
+}
 
-	export default AirplaneList;
+export default AirplaneList;
