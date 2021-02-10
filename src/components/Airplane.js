@@ -25,9 +25,6 @@ export class Airplane extends Component {
 	}
 
 	savePlane(obj) {
-		console.log(obj);
-
-		console.log(this.state.planes);
 		axios.post(SERVER_URL, obj).then((response) => {
 			this.setState({ planes: [...this.state.planes, response.data] });
 		});

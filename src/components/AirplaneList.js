@@ -27,7 +27,6 @@ function AirplaneList(props) {
 
 function printLayout(obj) {
 	const { row, column } = obj;
-	console.log(row, column);
 	let letter = 65; // ASCII for A
 
 	return (
@@ -55,11 +54,3 @@ function printLayout(obj) {
 }
 
 export default AirplaneList;
-
-{
-	/* <th class="planeLayout">{String.fromCharCode(letter)}</th>
-							{[...Array(column)].map((e, i) => (
-								<td class="planeLayout">{i}</td>
-							))}
-							{letter++} */
-}
