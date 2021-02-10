@@ -14,3 +14,38 @@ code {
 	width: 20px;
 	/* margin-right: 0; */
 }
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 10vh;
+	background-color: rgb(73, 79, 82);
+	color: white;
+}
+
+.nav-links,
+.navAdmin-links {
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+}
+
+.navAdmin-links {
+	justify-content: space-between;
+}
+
+a {
+	text-decoration: none;
+}
+
+a,
+a li {
+	color: white;
+}
+
+a:hover {
+	text-decoration: underline;
+}
