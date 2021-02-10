@@ -10,11 +10,11 @@ function AirplaneList(props) {
 						<tbody>
 							<tr>
 								<th>Rows</th>
-								<td>{p.rows}</td>
+								<td>{p.row}</td>
 							</tr>
 							<tr>
 								<th>Columns</th>
-								<td>{p.cols}</td>
+								<td>{p.column}</td>
 							</tr>
 						</tbody>
 					</table>
