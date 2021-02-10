@@ -18,10 +18,48 @@ function AirplaneList(props) {
 							</tr>
 						</tbody>
 					</table>
+					{printLayout(p)}
 				</div>
 			))}
 		</div>
 	);
 }
 
+function printLayout(obj) {
+	const { row, column } = obj;
+	console.log(row, column);
+	let letter = 65; // ASCII for A
+
+	return (
+		<div>
+			<table>
+				<tbody>
+					{[...Array(Number(column))].map((e, i) => (
+						<tr>
+							<th>{String.fromCharCode(letter++)}</th>
+							{[...Array(Number(row))].map((e, i) => (
+								<td class="planeLayout"></td>
+							))}
+						</tr>
+					))}
+					<tr>
+						<th></th>
+						{[...Array(Number(row))].map((e, i) => (
+							<td>{i + 1}</td>
+						))}
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	);
+}
+
 export default AirplaneList;
+
+{
+	/* <th class="planeLayout">{String.fromCharCode(letter)}</th>
+							{[...Array(column)].map((e, i) => (
+								<td class="planeLayout">{i}</td>
+							))}
+							{letter++} */
+}
