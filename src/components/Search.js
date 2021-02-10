@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import AirplaneForm from "./AirplaneForm";
+import { Link } from 'react-router-dom';
 
-const SERVER_URL = 'http://localhost:3000/flights.json';
+const SERVER_URL = 'http://localhost:3000/flights';
 
 // Child
 
@@ -10,12 +10,18 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: '',
       origin: '',
       destination: '',
     };
+    this._handleName = this._handleName.bind(this);
     this._handleChange1 = this._handleChange1.bind(this);
     this._handleChange2 = this._handleChange2.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
+  }
+
+  _handleName(event) {
+    this.setState({name: event.target.value});
   }
 
   _handleChange1(e) {
@@ -38,7 +44,9 @@ class SearchForm extends Component {
   render() {
       return(
         <form onSubmit={ this._handleSubmit } class="flights">
-
+       <p>Name</p>
+       <input type="text" required onInput={ this._handleName }/>
+       
        <p>Origin</p>
        <select value={this.state.value} onChange={this._handleChange1}>
          <option value=""></option>
@@ -64,15 +72,18 @@ class SearchForm extends Component {
     }
   }
 
+
+
   function ShowFlights(props) {
     return (
       <div>
       <h1> Flight Search Results</h1>
-          { props.flights.map( s =>
-             <p key= {s.id}>{s.date}, {s.number}, {s.origin} to {s.destination}, {s.name}</p>)}
+          { props.flights.map( f =>
+             <p key= {f.id}>{f.date}, {f.number}, {f.origin} to {f.destination}, {f.name}<Link to="/Reservations">Book Flight</Link></p></p>)}
       </div>
     );
   }
+
 
   // Parent
 
@@ -114,13 +125,13 @@ _handleClick(e) {
          }.bind(this));
 
          return (
-           <div>
-           <h2> Flight Search Results</h2>
-               { this.state.flights.map( s =>
-                 <p key= {s.id}>{s.date}, {s.number}, {s.origin} to {s.destination}, {s.name}</p>)}
+            <div>
+            { this.state.flights.map( f =>
+                 <p key= {f.id}>{f.date}, {f.number}, {f.origin} to {f.destination}, {f.name}</p>)}
+                  <Link to="/Reservations">Book Flight</Link></p>
            </div>
-         );
-       }
+          );
+        }
 
 
 render() {
