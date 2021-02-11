@@ -26,12 +26,12 @@ export class AirplaneForm extends Component {
 	render() {
 		return (
 			<div>
-				<form onSubmit={this._handleSubmit}>
-					<label htmlFor="name">Name</label>
+				<form class="form" onSubmit={this._handleSubmit}>
+					<label class="label" htmlFor="name">Name</label>
 					<input type="text" id="name" onChange={this._handleChange} value={this.state.name} placeholder="e.g. NH747" />
-					<label htmlFor="row">Rows</label>
+					<label class="label" htmlFor="row">Rows</label>
 					<input type="number" id="row" onChange={this._handleChange} value={this.state.row} />
-					<label htmlFor="column">Columns</label>
+					<label class="label" htmlFor="column">Columns</label>
 					<input type="number" id="column" onChange={this._handleChange} value={this.state.column} />
 					<button>Add Plane</button>
 				</form>

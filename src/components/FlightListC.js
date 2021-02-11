@@ -3,10 +3,10 @@ import React, { Component } from "react";
 const FlightListC = (props) => {
 	console.log(props.flights);
 	return (
-		<div>
+		<div class="list"><h2>Current Flights:</h2>
 			{props.flights.map((f) => (
 				<div key={f.id}>
-					<h2>{f.number}</h2>
+					<h3>{f.number}</h3>
 					<table>
 						<tbody>
 							<tr>

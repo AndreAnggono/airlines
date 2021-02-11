@@ -2,10 +2,10 @@ import React from "react";
 
 function AirplaneList(props) {
 	return (
-		<div>
+		<div class="list"><h2>Current Airplanes:</h2>
 			{props.planes.map((p) => (
 				<div key={p.id}>
-					<h2>{p.name}</h2>
+					<h3>{p.name}</h3>
 					<table>
 						<tbody>
 							<tr>

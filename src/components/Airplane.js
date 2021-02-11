@@ -33,7 +33,6 @@ export class Airplane extends Component {
 	render() {
 		return (
 			<div>
-				Airplane Console
 				<AirplaneForm onSubmit={this.savePlane} />
 				<AirplaneList planes={this.state.planes} />
 			</div>

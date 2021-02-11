@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 body {
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	font-family: 'Bungee', cursive;
+	background-color: #2e2d2d;
+  padding: 0;
+	margin: 0 auto;
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+	font-family: 'Roboto', sans-serif;
 }
 
 .planeLayout {
@@ -31,10 +35,12 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 	list-style: none;
+
 }
 
 .navAdmin-links {
 	justify-content: space-between;
+	background-color: #ABA2B0;
 }
 
 a {
@@ -48,4 +54,66 @@ a li {
 
 a:hover {
 	text-decoration: underline;
+}
+
+
+.form {
+	color: white;
+	margin-left: 17%;
+	display: block;
+}
+
+.flightform {
+	color: white;
+	margin-left: 5%;
+	margin-top: 15px;
+	display: block;
+}
+
+.label {
+	padding-right: 20px;
+	padding-left: 20px;
+}
+button {
+	display: inline;
+	border-radius: 1em;
+	font-family: 'Bungee', cursive;
+	margin-top: 1em;
+	margin-left: 20px;
+}
+
+.list {
+	color: white;
+	margin-left: 20%;
+	margin-top: 4em;
+	display: block;
+	font-size: 15px;
+}
+
+#dropdown {
+	background-color: #ABA2B0;
+}
+
+ #homepage {
+	color: #ABA2B0;
+	/* height: 100%;
+	font-size: 15em;
+	display: inline; */
+	/* image("https://s.abcnews.com/images/International/russia-plane-fire-gty-ps-190508_hpEmbed_28x15_992.jpg"); */
+}
+
+img {
+	display: block;
+	height: 32em;
+	width: 100%;
+}
+
+table {
+  padding: 15px;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+	text-align: left;
 }

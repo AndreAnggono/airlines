@@ -35,7 +35,6 @@ saveFlight(obj) {
   render() {
     return (
       <div>
-      Create New Flight
       <FlightFormC onSubmit={ this.saveFlight }/>
       <FlightListC flights={ this.state.flights } />
       </div>
