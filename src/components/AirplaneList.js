@@ -29,33 +29,28 @@ function printLayout(obj) {
 	const { row, column } = obj;
 	let letter = 65; // ASCII for A
 
-	function printLayout(obj) {
-		const { row, column } = obj;
-		let letter = 65; // ASCII for A
-
-		return (
-			<div>
-				<table>
-					<tbody>
-						{[...Array(Number(column))].map((e, i) => (
-							<tr>
-								<th>{String.fromCharCode(letter++)}</th>
-								{[...Array(Number(row))].map((e, i) => (
-									<td class="planeLayout"></td>
-								))}
-							</tr>
-						))}
+	return (
+		<div>
+			<table>
+				<tbody>
+					{[...Array(Number(column))].map((e, i) => (
 						<tr>
-							<th></th>
+							<th>{String.fromCharCode(letter++)}</th>
 							{[...Array(Number(row))].map((e, i) => (
-								<td>{i + 1}</td>
+								<td class="planeLayout"></td>
 							))}
 						</tr>
-					</tbody>
-				</table>
-			</div>
-		);
-	}
+					))}
+					<tr>
+						<th></th>
+						{[...Array(Number(row))].map((e, i) => (
+							<td>{i + 1}</td>
+						))}
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	);
 }
 
 export default AirplaneList;

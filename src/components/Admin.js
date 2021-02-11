@@ -9,8 +9,8 @@ function Admin() {
 			<div>
 				{Nav()}
 				<Switch>
-					<Route path="/admin/airplane" component={Airplane} />
-					<Route path="/admin/flight" component={FlightC} />
+					<Route path="/admin/airplane" exact component={Airplane} />
+					<Route path="/admin/flight" exact component={FlightC} />
 				</Switch>
 			</div>
 		</Router>
