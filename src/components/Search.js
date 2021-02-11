@@ -71,7 +71,6 @@ class SearchForm extends Component {
 }
 
 function ShowFlights(props) {
-	console.log("this is props", props);
 	return (
 		<div>
 			<h1> Flight Search Results</h1>
@@ -79,6 +78,7 @@ function ShowFlights(props) {
 				<p key={f.id}>
 					{f.date}, {f.number}, {f.origin}, {f.destination}, {f.airplane_id}
           <Link to="/Reservation">Book Flight</Link>
+
 				</p>
 			))}
 		</div>

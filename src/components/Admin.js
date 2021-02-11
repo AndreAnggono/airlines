@@ -8,10 +8,9 @@ function Admin() {
 		<Router>
 			<div>
 				{Nav()}
-				Admin page
 				<Switch>
-					<Route path="/admin/airplane" component={Airplane} />
-					<Route path="/admin/flight" component={FlightC} />
+					<Route path="/admin/airplane" exact component={Airplane} />
+					<Route path="/admin/flight" exact component={FlightC} />
 				</Switch>
 			</div>
 		</Router>
@@ -20,7 +19,7 @@ function Admin() {
 
 function Nav() {
 	return (
-		<nav>
+		<nav id="dropdown">
 			<ul className="navAdmin-links">
 				<Link to="/admin/airplane">
 					<li>Create Airplane</li>

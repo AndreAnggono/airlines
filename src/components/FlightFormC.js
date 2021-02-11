@@ -27,14 +27,14 @@ class FlightFormC extends Component {
   render() {
     return (
     <div>
-      <form onSubmit={ this._handleSubmit }>
-      <label>Flight Number: </label>
+      <form class="flightform" onSubmit={ this._handleSubmit }>
+      <label class="label">Flight Number: </label>
       <input type="text" id="number" onChange={ this._handleChange } value={ this.state.number }/>
-      <label>Date: </label>
+      <label class="label">Date: </label>
       <input type="text" id="date" onChange={ this._handleChange } value={ this.state.date }/>
-      <label>From: </label>
+      <label class="label">From: </label>
       <input type="text" id="origin" onChange={ this._handleChange } value={ this.state.origin }/>
-      <label>To: </label>
+      <label class="label">To: </label>
       <input type="text" id="destination" onChange={ this._handleChange } value={ this.state.destination }/>
       <button>Create Flight</button>
       </form>
