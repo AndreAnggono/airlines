@@ -70,7 +70,6 @@ class SearchForm extends Component {
 }
 
 function ShowFlights(props) {
-	console.log("this is props", props);
 	return (
 		<div>
 			<h1> Flight Search Results</h1>
