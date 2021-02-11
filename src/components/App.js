@@ -14,15 +14,15 @@ function App() {
 				<Nav />
 				<Switch>
 					<Route path="/" exact component={Home} />
-					<Route path="/admin" component={Admin} />
+					<Route path="/admin" exact component={Admin} />
 					<Route path="/admin/airplane" component={Airplane} />
 					<Route path="/admin/flight" component={FlightC} />
 					<Route path="/search" component={Search} />
 				</Switch>
 				{/* <Home /> */}
-				{/* <Airplane />
-			<Search />
-			<FlightC />
+				{/* <Airplane /> */}
+				{/* <Search /> */}
+				{/* <FlightC />
 			<Reservation /> */}
 			</div>
 		</Router>
