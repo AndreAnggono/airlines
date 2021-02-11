@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
-const SERVER_URL = 'http://localhost:3000/flights';
+
+const SERVER_URL = 'http://localhost:3000/flights.json';
+
 
 // Child
 
@@ -18,7 +19,10 @@ class SearchForm extends Component {
     this._handleChange1 = this._handleChange1.bind(this);
     this._handleChange2 = this._handleChange2.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
+
   }
+
+
 
   _handleName(event) {
     this.setState({name: event.target.value});
@@ -73,19 +77,16 @@ class SearchForm extends Component {
   }
 
 
-
   function ShowFlights(props) {
-    return (
-      <div>
-      <h1> Flight Search Results</h1>
-          { props.flights.map( f =>
-             <p key= {f.id}>{f.date}, {f.number}, {f.origin} to {f.destination}, {f.name}
-             <Link to="/Reservation">Book Flight</Link>
-             </p>)}
-      </div>
-    );
-  }
+      return (
+        <div>
+        <h1> Flight Search Results</h1>
+            { props.flights.map( f =>
+               <p key= {f.id}>{f.date}, {f.number}, {f.origin} to {f.destination}, {f.airplane_id} </p> )}
 
+        </div>
+      );
+    }
 
   // Parent
 
@@ -127,14 +128,14 @@ _handleClick(e) {
          }.bind(this));
 
          return (
-            <div>
-            { this.state.flights.map( f =>
-                 <p key= {f.id}>{f.date}, {f.number}, {f.origin} to {f.destination}, {f.name}
-                  <Link to="/Reservation">Book Flight</Link> </p>
-                )}
-           </div>
-          );
-        }
+             <div>
+             { this.state.flights.map( f =>
+                  <p key= {f.id}>{f.date}, {f.number}, {f.origin} to {f.destination}, {f.airplane_id}
+</p>
+                 )}
+            </div>
+           );
+         }
 
 
 render() {
